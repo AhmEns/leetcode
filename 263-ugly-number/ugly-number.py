@@ -1,6 +1,6 @@
 class Solution(object):
     def isUgly(self, n):
-        if n == 0:
+        if n <= 0:
             return False
         while n % 5 == 0:
             n = n / 5
