@@ -1,13 +1,20 @@
 class Solution(object):
     def calPoints(self, operations):
         stack = []
+        totalScore = 0
         for op in operations:
             if op == '+':
-                stack.append(stack[-1] + stack[-2])
+                val = stack[-1] + stack[-2]
+                stack.append(val)
+                totalScore += val
             elif op == 'D':
-                stack.append(2 * stack[-1])
+                val = 2 * stack[-1]
+                stack.append(val)
+                totalScore += val
             elif op == 'C':
-                stack.pop()
+                totalScore -= stack.pop()
             else:
-                stack.append(int(op))
-        return sum(stack)
+                val = int(op)
+                stack.append(val)
+                totalScore += val
+        return totalScore
