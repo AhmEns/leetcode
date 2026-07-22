@@ -5,17 +5,16 @@ class Solution(object):
         :rtype: List[str]
         """
         score_sorted = sorted(score, reverse = True)
-        ans = []
 
-        for i in score:
-            rank = score_sorted.index(i)
-            if i == score_sorted[0]:
-                ans.append("Gold Medal")
-            elif i == score_sorted[1]:
-                ans.append("Silver Medal")
-            elif i == score_sorted[2]:
-                ans.append("Bronze Medal")
+        rank_map = {}
+        for idx, s in enumerate(score_sorted):
+            if idx == 0:
+                rank_map[s] = "Gold Medal"
+            elif idx == 1:
+                rank_map[s] = "Silver Medal"
+            elif idx == 2:
+                rank_map[s] = "Bronze Medal"
             else:
-                ans.append(str(rank + 1))
+                rank_map[s] = str(idx + 1)
         
-        return ans
+        return [rank_map[s] for s in score]
