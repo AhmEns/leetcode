@@ -1,13 +1,13 @@
 class Solution(object):
     def reverse(self, x):
-        """
-        :type x: int
-        :rtype: int
-        """
         neg = x < 0
+        x = abs(x)
+        rev = 0
         
-        rev = int(str(abs(x))[::-1])
-        
+        while x > 0:
+            rev = rev * 10 + x % 10
+            x //= 10
+            
         if neg:
             rev = -rev
             
