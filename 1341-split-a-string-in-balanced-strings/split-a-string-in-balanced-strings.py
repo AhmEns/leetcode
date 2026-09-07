@@ -8,7 +8,7 @@ class Solution(object):
         for i in s:
             if i == "R":
                 counter += 1
-            elif i == "L":
+            else:
                 counter -= 1
             if counter == 0:
                 return_value += 1
