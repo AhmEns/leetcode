@@ -6,8 +6,10 @@ class Solution(object):
         :rtype: List[int]
         """
         return_val = []
-        for i in nums1:
-            for j in nums2:
-                if i == j and i not in return_val:
-                    return_val.append(i)
+        
+        kume = set(nums2)
+
+        for num in nums1:
+            if num in kume and num not in return_val:
+                return_val.append(num)
         return return_val
