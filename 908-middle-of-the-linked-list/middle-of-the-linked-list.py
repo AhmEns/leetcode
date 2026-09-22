@@ -11,7 +11,6 @@ class Solution(object):
         """
         count = 0
         current = head
-        return_val = ListNode()
 
         while current is not None:
             count += 1
