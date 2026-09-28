@@ -4,14 +4,14 @@ class Solution(object):
         :type moves: str
         :rtype: bool
         """
-        pos = [0, 0]
+        u, r, l, d = 0, 0, 0, 0
         for i in moves:
             if i == "U":
-                pos[1] += 1
+                u += 1
             elif i == "D":
-                pos[1] -= 1
+                d += 1
             elif i == "R":
-                pos[0] += 1
+                r += 1
             else:
-                pos[0] -= 1
-        return pos[0] == 0 and pos[1] == 0
+                l += 1
+        return u == d and r == l
